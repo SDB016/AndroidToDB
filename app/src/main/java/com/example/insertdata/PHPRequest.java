@@ -28,9 +28,10 @@ public class PHPRequest {
         return jsonHtml.toString();
     }
 
-    public String PhPtest(final String index, final String data1, final String data2,final String data3,final String flag) {
+    public String PhPtest(final String name, final String teeth1_have, final String teeth2_have,final String teeth3_have,final String flag) {
         try {
-            String postData = "Ind=" + index + "&" + "Data1=" + data1 + "&" + "Data2=" + data2 + "&" + "Data3=" + data3 + "&" + "flag=" + flag;
+            String postData = "name=" + name + "&" + "teeth1_have=" + teeth1_have + "&" + "teeth2_have=" + teeth2_have + "&" + "teeth3_have=" + teeth3_have + "&" + "flag=" + flag;
+            Log.d("param","param = " + flag + ' '+teeth1_have+ ' '+teeth2_have+ ' '+teeth3_have);
             HttpURLConnection conn = (HttpURLConnection)url.openConnection();
             conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
             conn.setRequestMethod("POST");
