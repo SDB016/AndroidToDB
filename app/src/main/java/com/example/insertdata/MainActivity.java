@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
     String result;
 
     Handler mhandler;
-    connectThread connectThread;
+    CRUDThread mcrudThread;
 
 
     @Override
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         mreadThread = new ReadThread();
         mreadThread.start();
 
-        connectThread = new connectThread();
+        mcrudThread = new CRUDThread();
         mhandler = new Handler();
 
         name = (EditText)findViewById(R.id.editText0);
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         btn_delete = findViewById(R.id.btn_delete);
 
 
-        connectThread.start();
+        mcrudThread.start();
         btn_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private class connectThread extends Thread{
+    private class CRUDThread extends Thread{
         public void run(){
             while (true){
                 if(clicked){
@@ -145,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     Log.e("main", "running");
 
-                    is = new URL("http://chamdong.hopto.org/php_connection.php").openStream();
+                    is = new URL("http://chamdong.hopto.org/servertask/SQLdata_CRUD.php").openStream();
 
                     if (is != null) {
                         Log.e("main", "not null");
@@ -216,7 +216,9 @@ public class MainActivity extends AppCompatActivity {
                 teeth3_haveList[i]=(String)tmp.get("teeth3_have");
                 teeth4_haveList[i]=(String)tmp.get("teeth4_have");
 
-                userInfo[i] = (String)tmp.get("name") + ' ' + (String)tmp.get("kindergarten") + ' ' + (String)tmp.get("class")+ ' ' + (String)tmp.get("teeth1_have")+ ' ' + (String)tmp.get("teeth2_have")+ ' ' + (String)tmp.get("teeth3_have");
+                userInfo[i] = (String)tmp.get("name") + ' ' + (String)tmp.get("kindergarten") + ' ' +
+                        (String)tmp.get("class")+ ' ' + (String)tmp.get("teeth1_have")+ ' ' + (String)tmp.get("teeth2_have")+ ' ' +
+                        (String)tmp.get("teeth3_have");
             }
 
         } catch (ParseException e) {
