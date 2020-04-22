@@ -6,7 +6,9 @@
     }
     mysqli_set_charset($conn,"utf8");
 
-    $res = mysqli_query($conn,"select * from `userinfo`");
+    $sql = "select * from userinfo order by name";
+
+    $res = mysqli_query($conn,$sql);
 
     $result = array();
 
@@ -30,11 +32,11 @@
       $query = "delete from `userinfo` WHERE `name` ='".$_POST['name']."'";
     }
     $result = mysqli_query($conn, $query);
-
+/*
     if($result)
       echo "1";
     else
       echo "-1";
-
+*/
     mysqli_close($conn);
 ?>
