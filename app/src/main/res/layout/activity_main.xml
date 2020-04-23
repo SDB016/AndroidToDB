@@ -36,6 +36,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:orientation="horizontal">
+                <!--
                 <Button
                     android:layout_width="50dp"
                     android:layout_height="30dp"
@@ -43,6 +44,7 @@
                     android:text="Send"
                     android:id="@+id/btn_send"
                     android:layout_gravity="center_horizontal" />
+                -->
                 <Button
                     android:layout_width="50dp"
                     android:layout_height="30dp"
@@ -64,6 +66,26 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_margin="10dp">
+
+                <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="id : "
+                    android:id="@+id/data" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editText"
+                    android:textColor="#8977ad"
+                    android:layout_weight="1" />
+            </LinearLayout>
 
                 <LinearLayout
                     android:orientation="horizontal"
@@ -93,7 +115,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:text="teeth1_have : "
+                        android:text="teeth1_ph : "
                         android:id="@+id/data1" />
 
                     <EditText
@@ -112,7 +134,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:text="teeth2_have : "
+                        android:text="teeth2_ph : "
                         android:id="@+id/data2" />
 
                     <EditText
@@ -131,7 +153,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:text="teeth3_have : "
+                        android:text="teeth3_ph : "
                         android:id="@+id/data3" />
 
                     <EditText
@@ -139,6 +161,24 @@
                         android:layout_height="wrap_content"
                         android:textColor="#8977ad"
                         android:id="@+id/editText3"
+                        android:layout_weight="1" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="teeth4_ph : "
+                        android:id="@+id/data4" />
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#8977ad"
+                        android:id="@+id/editText4"
                         android:layout_weight="1" />
                 </LinearLayout>
             </LinearLayout>

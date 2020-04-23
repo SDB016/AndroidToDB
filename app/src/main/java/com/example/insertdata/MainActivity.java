@@ -45,8 +45,8 @@ public class MainActivity extends AppCompatActivity {
     private String[] teeth3_haveList;
     private String[] teeth4_haveList;
 
-    private EditText name, teeth1_have, teeth2_have, teeth3_have;
-    private Button btn_send;
+    private EditText id,name, teeth1_ph, teeth2_ph, teeth3_ph,teeth4_ph;
+   // private Button btn_send;
     private Button btn_modify;
     private Button btn_delete;
 
@@ -73,23 +73,25 @@ public class MainActivity extends AppCompatActivity {
         mcrudThread = new CRUDThread();
         mhandler = new Handler();
 
+        id = (EditText)findViewById(R.id.editText);
         name = (EditText)findViewById(R.id.editText0);
-        teeth1_have = (EditText)findViewById(R.id.editText1);
-        teeth2_have = (EditText)findViewById(R.id.editText2);
-        teeth3_have = (EditText)findViewById(R.id.editText3);
-        btn_send = (Button)findViewById(R.id.btn_send);
+        teeth1_ph = (EditText)findViewById(R.id.editText1);
+        teeth2_ph = (EditText)findViewById(R.id.editText2);
+        teeth3_ph = (EditText)findViewById(R.id.editText3);
+        teeth4_ph = (EditText)findViewById(R.id.editText4);
+      //  btn_send = (Button)findViewById(R.id.btn_send);
         btn_modify = findViewById(R.id.btn_modify);
         btn_delete = findViewById(R.id.btn_delete);
 
 
         mcrudThread.start();
-        btn_send.setOnClickListener(new View.OnClickListener() {
+       /* btn_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 clicked=true;
                 flag = "send";
             }
-        });
+        });*/
 
         btn_modify.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -120,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
                         e.printStackTrace();
                         Log.d("dpdpdpdpdp","No!!!!!!!!!!!");
                     }
-                    result = request.PhPtest(String.valueOf(name.getText()),String.valueOf(teeth1_have.getText()),String.valueOf(teeth2_have.getText()),String.valueOf(teeth3_have.getText()),flag);
+                    result = request.PhPtest(String.valueOf(id.getText()),String.valueOf(name.getText()),String.valueOf(teeth1_ph.getText()),String.valueOf(teeth2_ph.getText()),String.valueOf(teeth3_ph.getText()),String.valueOf(teeth4_ph.getText()),flag);
 
                     mhandler.post(new Runnable() {
                         @Override
